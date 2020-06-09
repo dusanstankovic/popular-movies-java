@@ -80,7 +80,7 @@ public class MovieDetailsActivity extends BaseActivity {
             // Picasso
             Picasso.get()
                     .load(IMAGE_BACKDROP_BASE_URL + movieDetails.getBackdropPath())
-                    .placeholder(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.ic_baseline_image_24)
                     .into(mMovieImageView);
             mMovieTitle.setText(movieDetails.getTitle());
             mMovieOverview.setText(movieDetails.getOverview());
@@ -99,7 +99,7 @@ public class MovieDetailsActivity extends BaseActivity {
         }
 
         Picasso.get()
-                .load(R.drawable.ic_launcher_background)
+                .load(R.drawable.ic_baseline_image_24)
                 .into(mMovieImageView);
 
         showParent();

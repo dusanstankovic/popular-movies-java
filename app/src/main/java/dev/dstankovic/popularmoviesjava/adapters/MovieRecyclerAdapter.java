@@ -76,18 +76,18 @@ public class MovieRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
         if (itemViewType == MOVIE_TYPE) {
             // Picasso setup
             Picasso.get().load(IMAGE_BACKDROP_BASE_URL + mMovies.get(position).getBackdropPath())
-                    .placeholder(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.ic_baseline_image_24)
                     .into(((MovieViewHolder) holder).image);
 
             ((MovieViewHolder) holder).title.setText(mMovies.get(position).getTitle());
             ((MovieViewHolder) holder).year.setText(mMovies.get(position).getReleaseDate().substring(0, 4));
             ((MovieViewHolder) holder).socialScore.setText("");
         } else if (itemViewType == CATEGORY_TYPE) {
-            Uri path = Uri.parse("android.resource://dev.dstankovic.popularmoviesjava/drawable/" + mMovies.get(position).getTitle());
-            Log.d(TAG, "onBindViewHolder: " + path);
+            Uri path = Uri.parse("android.resource://dev.dstankovic.popularmoviesjava/drawable/" + mMovies.get(position).getTitle().toLowerCase());
+            Log.d(TAG, path.toString());
             // Picasso setup
             Picasso.get().load(path)
-                    .placeholder(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.ic_baseline_image_24)
                     .into(((CategoryViewHolder) holder).mCircleImageView);
 
             ((CategoryViewHolder) holder).mCategoryTitle.setText(Constants.DEFAULT_MOVIE_CATEGORIES.get(position).getName());
